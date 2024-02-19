@@ -1,0 +1,54 @@
+<!-- Code From : Dhruv A Joshi -->
+<!-- When name of the basic color is entered in the textbox and leave the textbox then it
+should take that color as background color. -->
+
+<!-- Write HTML/Javacript code to change the background color of div element periodically. For
+example, at every 30 seconds it changes the background color. Hint: use SetInterval function. -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Practical 1</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Antonio&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="main">
+        <div id="page2">
+            <div class="inner-container">
+                <h1>Practical 2</h1>
+                <input type="number" name="mobileNumber" id="mobileNumber" placeholder="Mobile Number Here"
+                    maxlength="10">
+            </div>
+        </div>
+
+        <div id="page3">
+            <div id="changeBG">
+
+            </div>
+        </div>
+
+        <div id="page4">
+            <div class="box-container">
+                <h1>Practical 2.2</h1>
+                <input type="number" name="frequency" id="frequency" placeholder="Enter the Frequency">
+                <button onclick="toggleAnimation()"
+                    style="margin-top: 30px; padding: 6px 10px; background: crimson;">Start / Stop </button>
+                <div id="img-container">
+                    <img id="animatedImage" src="" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+<script src="main.js"></script>
+
+</html>

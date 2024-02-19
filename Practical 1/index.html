@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html,
+        body {
+            height: 100%;
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center
+        }
+
+        #container {
+            width: 50vw;
+            height: 50vh;
+            border: 2px solid black;
+            border-radius: 20px;
+            background: lightseagreen;
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        #container h1 {
+            margin-top: 30px;
+        }
+
+        #text-container {
+            margin-top: 10vh;
+        }
+
+        input {
+            width: 40vw;
+            height: 8vh;
+            border-radius: 6px;
+            font-size: 20px;
+            padding: 0 20px;
+        }
+
+        input[type="text"]::placeholder {
+            color: red;
+            font-size: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="container">
+        <h1>Practical 1</h1>
+        <div id="text-container">
+            <input type="text" name="color" id="color" placeholder="COLOR NAME HERE">
+        </div>
+    </div>
+</body>
+<script>
+    let Container = document.getElementById('container')
+    let heading = document.getElementsByTagName('h1')
+    console.log(heading);
+    console.log(Container);
+    let textBox = document.getElementById('color');
+    console.log(textBox);
+    textBox.addEventListener('change', () => {
+        Container.style.backgroundColor = textBox.value;
+        if (Container.style.backgroundColor === "black") {
+            heading.style.color = "white"
+        }
+    })
+</script>
+</html>

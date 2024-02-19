@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prime or Not ?</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body ng-app="myapp">
+    <div id="main">
+        <div id="page1">
+            <div class="input-box">
+                <input type="text" ng-model="number" placeholder="Enter number" />
+                <div class="message-box">
+                    <p id="message" ng-show="number !== undefined && number !== ''">{{number}} is {{number | isPrime }}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+<script src="./main.js"></script>
+
+</html>

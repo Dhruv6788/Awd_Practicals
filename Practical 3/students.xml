@@ -1,0 +1,12 @@
+<students>
+  <student>
+    <enrollment>4473625242224</enrollment>
+    <name>pratik</name>
+    <details>
+      <city>Baroda</city>
+      <address>xyz</address>
+      <pincode>239438</pincode>
+    </details>
+  </student>
+</students>
+
