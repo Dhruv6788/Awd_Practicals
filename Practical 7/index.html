@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Addition and Subtraction</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body ng-controller="myController">
+
+    <div class="container mx-auto mt-10">
+
+        <h1 class="text-3xl font-bold mb-5 text-center">Add & Subtract</h1>
+
+        <div class="flex items-center flex-col mb-5">
+
+            <input type="number" ng-model="number1" placeholder="Enter first number"
+                class="px-4 py-2 mr-2 mt-5 border border-gray-300">
+            <input type="number" ng-model="number2" placeholder="Enter second number"
+                class="px-4 py-2 mr-2 mt-5 border border-gray-300">
+            <div class="mt-5 flex space-x-10">
+                <button ng-click="add()"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Add</button>
+                <button ng-click="subtract()"
+                    class="px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600">Sub</button>
+            </div>
+        </div>
+        <div ng-if="result !== undefined" class="w-full">
+            <p class="text-xl text-center">Result: {{ result }}</p>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

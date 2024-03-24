@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Password Validation</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+
+<body ng-controller="PasswordController" class="bg-gray-100 p-4">
+
+    <h1 class="text-2xl font-bold mb-4 text-center mt-40">Password Validation</h1>
+
+    <form name="passwordForm" novalidate class="max-w-md mx-auto bg-white p-6 rounded shadow-md">
+        <label for="password" class="block mb-2">Password:</label>
+        <input type="password" id="password" name="password" ng-model="user.password" ng-minlength="4"
+            ng-maxlength="10" ng-pattern="/^\d.*$/" required
+            class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500">
+        <div ng-messages="passwordForm.password.$error" ng-if="passwordForm.password.$dirty"
+            class="text-red-500 text-sm mb-3">
+            <div ng-message="required">Password is required.</div>
+            <div ng-message="minlength">Password must be at least 4 characters long.</div>
+            <div ng-message="maxlength">Password cannot be more than 10 characters long.</div>
+            <div ng-message="pattern">Password must start with a number.</div>
+        </div>
+
+        <label for="confirmPassword" class="block mb-2">Confirm Password:</label>
+        <input type="password" id="confirmPassword" name="confirmPassword" ng-model="user.confirmPassword"
+            ng-change="validatePassword()" required
+            class="w-full px-3 py-2 mb-3 border rounded-md focus:outline-none focus:border-blue-500">
+        <div ng-messages="passwordForm.confirmPassword.$error" ng-if="passwordForm.confirmPassword.$dirty"
+            class="text-red-500 text-sm mb-3">
+            <div ng-message="required">Confirmation password is required.</div>
+            <div ng-message="match">Passwords do not match.</div>
+        </div>
+
+        <button type="submit" ng-disabled="passwordForm.$invalid"
+            class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600">Submit</button>
+    </form>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-messages.min.js"></script>
+    <script src="main.js"></script>
+</body>
+
+</html>

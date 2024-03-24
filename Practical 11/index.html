@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My SPA</title>
+    <!-- Include Tailwind CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.1.4/dist/tailwind.min.css" rel="stylesheet">
+    <!-- Include AngularJS -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular-route.min.js"></script>
+</head>
+
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+    <!-- Navigation -->
+    <nav class=" p-4">
+        <ul class="flex space-x-4 justify-center text-black">
+            <li><a href="#!/" class="hover:text-gray-500">Home</a></li>
+            <li><a href="#!/about" class="hover:text-gray-500">About</a></li>
+            <li><a href="#!/education" class="text-black hover:text-gray-300">Education</a></li>
+            <li><a href="#!/hobbies" class=" hover:text-gray-300">Hobbies</a></li>
+            <li><a href="#!/contact" class="hover:text-gray-300">Contact</a></li>
+        </ul>
+    </nav>
+
+    <!-- AngularJS Views -->
+    <div ng-view class="container mx-auto mt-8 p-8 bg-white shadow-lg rounded-lg"></div>
+
+    <script>
+        // Define the AngularJS module
+        var app = angular.module('myApp', ['ngRoute']);
+
+        // Configure routes
+        app.config(function ($routeProvider) {
+            $routeProvider
+                .when('/', {
+                    template: `<h1 class="text-6xl">I'm Dhruv Joshi</h1>
+                    <h1></h1>`
+                })
+                .when('/about', {
+                    template: `<h1 class="text-3xl font-bold underline">About Me</h1><p class="mt-4">
+            Hey there! I'm Dhruv, a coding enthusiast hailing from India. Currently, I'm knee-deep in my Bachelor of Engineering in Information Technology, but let me tell you, coding isn't just a subject for me; it's my favorite pastime! Whenever I get some free time, you'll find me diving into lines of code, exploring new languages, and building cool projects.
+My ultimate goal? To become a Full Stack Web Developer. Yup, I want to master everything from the frontend to the backend and everything in between. It's not just about the job; it's about the thrill of creating something awesome from scratch and making it work seamlessly.</p>`
+                })
+                .when('/education', {
+                    template: `<h1 class="text-3xl font-bold underline">Education</h1><p class="mt-4"> Currently I'm Pursuing B.E at MBIT</p>`
+                })
+                .when('/hobbies', {
+                    template: '<h1 class="text-3xl font-bold underline">Hobbies</h1><p class="mt-4">Play Cricket, Create animated Websites</p>'
+                })
+                .when('/contact', {
+                    template: `
+        <h1 class="text-3xl font-bold underline">Contact</h1>
+        <p class="mt-4">Email : jdhruv036@gmail.com</p>
+        <p class="mt-4">Phone : 8140188459</p>`
+                })
+                .otherwise({
+                    redirectTo: '/'
+                });
+        });
+    </script>
+
+</body>
+
+</html>
